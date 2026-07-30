@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" fill="#eee9e0"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)" />
+  
+  <!-- Taegeuk pattern -->
+  <g transform="translate(600, 180)">
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#1a1a1a" stroke-width="6"/>
+    <!-- Top red half -->
+    <path d="M -100 0 A 100 100 0 0 1 100 0 A 50 50 0 0 1 0 0 A 50 50 0 0 0 -100 0 Z" fill="#ff6b6b" stroke="#1a1a1a" stroke-width="4"/>
+    <!-- Bottom blue half -->
+    <path d="M -100 0 A 100 100 0 0 0 100 0 A 50 50 0 0 1 0 0 A 50 50 0 0 0 -100 0 Z" fill="#0055ff" stroke="#1a1a1a" stroke-width="4"/>
+  </g>
+  
+  <!-- Traditional Korean Hanok Gate silhouette -->
+  <g transform="translate(80, 220)">
+    <!-- Columns -->
+    <rect x="70" y="150" width="30" height="180" fill="#ff6b6b" stroke="#1a1a1a" stroke-width="6"/>
+    <rect x="290" y="150" width="30" height="180" fill="#ff6b6b" stroke="#1a1a1a" stroke-width="6"/>
+    
+    <!-- Outer columns -->
+    <rect x="30" y="200" width="20" height="130" fill="#ffcc00" stroke="#1a1a1a" stroke-width="6"/>
+    <rect x="340" y="200" width="20" height="130" fill="#ffcc00" stroke="#1a1a1a" stroke-width="6"/>
+    
+    <!-- Main horizontal beams -->
+    <rect x="50" y="130" width="290" height="25" fill="#0055ff" stroke="#1a1a1a" stroke-width="6"/>
+    <rect x="20" y="180" width="350" height="20" fill="#00aa55" stroke="#1a1a1a" stroke-width="6"/>
+    
+    <!-- Big Curved Hanok Roof -->
+    <path d="M 0 130 C 50 120 100 50 195 50 C 290 50 340 120 390 130 L 360 80 C 300 70 250 40 195 40 C 140 40 90 70 30 80 Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="3"/>
+    
+    <!-- Wall base -->
+    <rect x="10" y="320" width="370" height="20" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="3"/>
+  </g>
+  
+  <!-- Ground -->
+  <rect x="0" y="540" width="800" height="60" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="3"/>
+  
+  <!-- Text Label -->
+  <rect x="50" y="50" width="260" height="60" fill="white" stroke="#1a1a1a" stroke-width="5" rx="10"/>
+  <text x="70" y="92" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="900" fill="#1a1a1a" letter-spacing="2">S. KOREA</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" fill="#2d132c"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)" />
+  
+  <!-- Skyline / Skyscrapers Silhouette -->
+  <g transform="translate(50, 150)">
+    <!-- Tower 1 -->
+    <rect x="50" y="100" width="70" height="300" fill="#1a1a1a" stroke="#ffffff" stroke-width="4" stroke-opacity="0.5"/>
+    <rect x="65" y="120" width="40" height="260" fill="none" stroke="#ffcc00" stroke-width="2" stroke-opacity="0.7" stroke-dasharray="10, 10"/>
+    
+    <!-- Tower 2 (Bank of China Style) -->
+    <path d="M 170 400 L 230 400 L 230 50 L 170 400 Z" fill="#222" stroke="#ffffff" stroke-width="4" stroke-opacity="0.5"/>
+    <path d="M 230 400 L 230 50 L 290 400 L 230 400 Z" fill="#333" stroke="#ffffff" stroke-width="4" stroke-opacity="0.5"/>
+    
+    <!-- Tower 3 -->
+    <rect x="340" y="150" width="90" height="250" fill="#1a1a1a" stroke="#ffffff" stroke-width="4" stroke-opacity="0.5"/>
+    <rect x="360" y="180" width="50" height="200" fill="none" stroke="#ff6b6b" stroke-width="3" stroke-opacity="0.7" stroke-dasharray="15, 5"/>
+    
+    <!-- Tower 4 -->
+    <rect x="490" y="50" width="80" height="350" fill="#222" stroke="#ffffff" stroke-width="4" stroke-opacity="0.5"/>
+    <line x1="530" y1="50" x2="530" y2="0" stroke="#ffcc00" stroke-width="5"/>
+    
+    <!-- Tower 5 -->
+    <rect x="620" y="120" width="70" height="280" fill="#1a1a1a" stroke="#ffffff" stroke-width="4" stroke-opacity="0.5"/>
+  </g>
+  
+  <!-- Junk Boat (Traditional Red Sailboat) -->
+  <g transform="translate(150, 420)">
+    <!-- Hull -->
+    <path d="M 0 60 L 150 60 L 130 90 L 20 90 Z" fill="#ff6b6b" stroke="#1a1a1a" stroke-width="5"/>
+    <!-- Masts -->
+    <line x1="50" y1="60" x2="50" y2="0" stroke="#1a1a1a" stroke-width="5"/>
+    <line x1="100" y1="60" x2="100" y2="10" stroke="#1a1a1a" stroke-width="5"/>
+    <!-- Sails -->
+    <path d="M 50 0 L 10 50 L 50 50 Z" fill="#ff4d4d" stroke="#1a1a1a" stroke-width="4"/>
+    <path d="M 100 10 L 70 50 L 100 50 Z" fill="#ff4d4d" stroke="#1a1a1a" stroke-width="4"/>
+  </g>
+  
+  <!-- Water -->
+  <rect x="0" y="520" width="800" height="80" fill="#0c122c" stroke="#1a1a1a" stroke-width="6"/>
+  <path d="M 0 535 Q 200 520 400 535 T 800 535" fill="none" stroke="#ff6b6b" stroke-width="3" stroke-dasharray="10, 10"/>
+  
+  <!-- Text Label -->
+  <rect x="50" y="50" width="260" height="60" fill="white" stroke="#1a1a1a" stroke-width="5" rx="10"/>
+  <text x="70" y="92" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="900" fill="#1a1a1a" letter-spacing="2">HONG KONG</text>
+</svg>

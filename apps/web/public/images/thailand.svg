@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" fill="#eee9e0"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)" />
+  
+  <!-- Big Red Sun -->
+  <circle cx="250" cy="220" r="120" fill="#ff6b6b" stroke="#1a1a1a" stroke-width="6"/>
+  
+  <!-- Pagoda / Temple Silhouette -->
+  <g transform="translate(380, 100)">
+    <!-- Spire -->
+    <path d="M 120 400 L 120 20" stroke="#1a1a1a" stroke-width="6"/>
+    <circle cx="120" cy="50" r="10" fill="#ffcc00" stroke="#1a1a1a" stroke-width="4"/>
+    <path d="M 100 120 Q 120 70 140 120 Z" fill="#ffcc00" stroke="#1a1a1a" stroke-width="5"/>
+    
+    <!-- Tiers -->
+    <path d="M 80 200 L 160 200 Q 120 120 80 200 Z" fill="#0055ff" stroke="#1a1a1a" stroke-width="6"/>
+    <path d="M 60 280 L 180 280 Q 120 180 60 280 Z" fill="#ffcc00" stroke="#1a1a1a" stroke-width="6"/>
+    <path d="M 30 380 L 210 380 Q 120 260 30 380 Z" fill="#0055ff" stroke="#1a1a1a" stroke-width="6"/>
+    
+    <!-- Base -->
+    <rect x="10" y="380" width="220" height="70" fill="#ff6b6b" stroke="#1a1a1a" stroke-width="6" rx="5"/>
+  </g>
+  
+  <!-- Tropical Palm Tree Leaves on side -->
+  <path d="M 0 0 C 150 50 200 200 150 400" stroke="#1a1a1a" stroke-width="8" fill="none"/>
+  <path d="M 0 0 Q 100 50 150 30 L 130 50 Q 80 60 0 0" fill="#00aa55" stroke="#1a1a1a" stroke-width="4"/>
+  <path d="M 0 50 Q 120 100 180 80 L 160 100 Q 90 110 0 50" fill="#00aa55" stroke="#1a1a1a" stroke-width="4"/>
+  <path d="M 0 120 Q 130 180 190 150 L 170 170 Q 90 170 0 120" fill="#00aa55" stroke="#1a1a1a" stroke-width="4"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="520" width="800" height="80" fill="#ffcc00" stroke="#1a1a1a" stroke-width="6"/>
+  
+  <!-- Text Label -->
+  <rect x="50" y="470" width="250" height="60" fill="white" stroke="#1a1a1a" stroke-width="5" rx="10"/>
+  <text x="75" y="512" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="900" fill="#1a1a1a" letter-spacing="2">THAILAND</text>
+</svg>

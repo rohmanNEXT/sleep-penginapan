@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="800" height="600" fill="#ff6b6b"/>
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)" />
+  
+  <!-- Sun -->
+  <circle cx="600" cy="200" r="80" fill="#ffcc00" stroke="#1a1a1a" stroke-width="6"/>
+  
+  <!-- Marina Bay Sands Styled Shapes -->
+  <g transform="translate(100, 250)">
+    <!-- Tower 1 -->
+    <path d="M 50 250 L 80 50 L 130 50 L 100 250 Z" fill="#eee9e0" stroke="#1a1a1a" stroke-width="6"/>
+    <!-- Tower 2 -->
+    <path d="M 180 250 L 210 50 L 260 50 L 230 250 Z" fill="#eee9e0" stroke="#1a1a1a" stroke-width="6"/>
+    <!-- Tower 3 -->
+    <path d="M 310 250 L 340 50 L 390 50 L 360 250 Z" fill="#eee9e0" stroke="#1a1a1a" stroke-width="6"/>
+    <!-- SkyPark Ship on top -->
+    <path d="M 30 45 L 410 45 L 390 10 L 60 10 Z" fill="#0055ff" stroke="#1a1a1a" stroke-width="6"/>
+    <rect x="70" y="20" width="300" height="15" fill="#ffcc00" stroke="#1a1a1a" stroke-width="4"/>
+  </g>
+  
+  <!-- Waves -->
+  <path d="M 0 500 Q 200 460 400 500 T 800 500 L 800 600 L 0 600 Z" fill="#0055ff" stroke="#1a1a1a" stroke-width="6"/>
+  <path d="M 0 530 Q 200 500 400 530 T 800 530 L 800 600 L 0 600 Z" fill="#00aaff" stroke="#1a1a1a" stroke-width="6"/>
+  
+  <!-- Text Label -->
+  <rect x="50" y="50" width="280" height="60" fill="white" stroke="#1a1a1a" stroke-width="5" rx="10"/>
+  <text x="70" y="92" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="900" fill="#1a1a1a" letter-spacing="2">SINGAPORE</text>
+</svg>

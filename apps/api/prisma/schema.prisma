@@ -1,0 +1,201 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                    String                  @id @default(uuid())
+  nama                  String
+  username              String                  @unique
+  email                 String                  @unique
+  password              String
+  role                  String                  @default("user")
+  address               String?
+  tanggalLahir          DateTime?
+  isVerified            Boolean                 @default(false)
+  token                 String?
+  verifyTokenExpiry     DateTime?
+
+  balance               Balance?
+  reviews               Review[]
+
+  savedPenginapan       Penginapan[]            @relation("SavedPenginapan")
+  createdPenginapan     Penginapan[]            @relation("CreatedPenginapan")
+
+  transaksiPenginapan   TransaksiPenginapan[]
+  transaksiTopup        TransaksiTopup[]
+
+  createdAt             DateTime                @default(now())
+  updatedAt             DateTime                @updatedAt
+}
+
+model Penginapan {
+  id                    String                 @id @default(uuid())
+
+  title                 String
+
+  kategoriPenginapanId  String
+  kategoriDestinasiId   String
+
+  address               String
+  description           String?                @db.Text
+
+  umurPenginapan        Int?
+
+  rules                 String?                @db.Text
+  faq                   String?                @db.Text
+
+  image                 String[]
+
+  ratingRataRata        Float                  @default(0)
+
+  kategoriPenginapan    KategoriPenginapan     @relation(fields: [kategoriPenginapanId], references: [id])
+  kategoriDestinasi     KategoriDestinasi      @relation(fields: [kategoriDestinasiId], references: [id])
+
+  kategoriFasilitas     KategoriFasilitas[]
+  kategoriKamar         KategoriKamar[]
+
+  reviews               Review[]
+  cupons                Cupon[]
+  transaksi             TransaksiPenginapan[]
+
+  savedBy               User[]                  @relation("SavedPenginapan")
+  
+  userId                String?
+  user                  User?                   @relation("CreatedPenginapan", fields: [userId], references: [id])
+
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+}
+
+model KategoriPenginapan {
+  id            String         @id @default(uuid())
+  nama          String         @unique
+
+  penginapan    Penginapan[]
+}
+
+model KategoriDestinasi {
+  id            String         @id @default(uuid())
+
+  negara        String
+  provinsi      String
+  daerah        String
+
+  penginapan    Penginapan[]
+}
+
+model KategoriFasilitas {
+  id              String        @id @default(uuid())
+
+  penginapanId    String
+
+  nama            String
+
+  penginapan      Penginapan   @relation(fields: [penginapanId], references: [id])
+}
+
+model KategoriKamar {
+  id            String     @id @default(uuid())
+
+  penginapanId  String     @unique
+
+  maxKasur      Int
+  maxAdult      Int
+  maxChild      Int
+  maxKamar      Int        @default(1)
+  harga         Decimal    @db.Decimal(10, 2)
+  hargaPerChild Decimal    @default(0) @db.Decimal(10, 2)
+
+  penginapan    Penginapan @relation(fields: [penginapanId], references: [id])
+
+  transaksi     TransaksiPenginapan[]
+}
+
+model Balance {
+  id                    String                  @id @default(uuid())
+
+  userId                String                  @unique
+  saldo                 Decimal                 @default(0) @db.Decimal(10, 2)
+
+  user                  User                    @relation(fields: [userId], references: [id])
+
+  updatedAt             DateTime                @updatedAt
+}
+
+model TransaksiTopup {
+  id                    String                  @id @default(uuid())
+
+  userId                String
+  nominal               Decimal                 @db.Decimal(10, 2)
+
+  metodePembayaran      String?
+  status                String                  @default("SUCCESS")
+
+  user                  User                    @relation(fields: [userId], references: [id])
+
+  createdAt             DateTime                @default(now())
+}
+
+model Review {
+  id                    String                  @id @default(uuid())
+
+  userId                String
+  penginapanId          String
+
+  rating                Int
+  comment               String?                 @db.Text
+
+  user                  User                    @relation(fields: [userId], references: [id])
+  penginapan            Penginapan              @relation(fields: [penginapanId], references: [id])
+
+  createdAt             DateTime                @default(now())
+  updatedAt             DateTime                @updatedAt
+}
+
+model Cupon {
+  id                    String                  @id @default(uuid())
+
+  penginapanId          String?                 @unique
+
+  code                  String                  @unique
+  discountPercent       Int
+  link                  String?
+
+  expiredAt             DateTime?
+
+  penginapan            Penginapan?              @relation(fields: [penginapanId], references: [id])
+
+  transaksi             TransaksiPenginapan[]
+
+  createdAt             DateTime                @default(now())
+}
+
+model TransaksiPenginapan {
+  id                  String        @id @default(uuid())
+
+  userId              String
+  penginapanId        String
+  kamarId             String
+  cuponId             String?
+
+  checkIn             DateTime
+  checkOut            DateTime
+
+  jumlahDewasa        Int
+  jumlahAnak          Int
+  jumlahKamar         Int           @default(1)
+
+  totalHarga          Decimal       @db.Decimal(10, 2)
+
+  user                User          @relation(fields: [userId], references: [id])
+  penginapan          Penginapan    @relation(fields: [penginapanId], references: [id])
+  kamar               KategoriKamar @relation(fields: [kamarId], references: [id])
+  cupon               Cupon?        @relation(fields: [cuponId], references: [id])
+
+  createdAt           DateTime      @default(now())
+}
